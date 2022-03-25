@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt'
 
       - name: Run driver
         run: java -jar burp-driver/burp-ci-driver-2021.3-162.jar https://juice-shop.herokuapp.com/#/ --api-key=${{ secrets.BURP_API_KEY }} --site-id=2 --min-severity=high --min-confidence=certain --report-file=scan-report.html --report-type=summary
