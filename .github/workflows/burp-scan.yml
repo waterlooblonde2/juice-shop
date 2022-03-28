@@ -24,7 +24,9 @@ jobs:
       - name: Run burp scan
         env:
           BURP_API_KEY: ${{ secrets.BURP_API_KEY }}
-        run: java -jar burp-driver/burp-ci-driver-2021.3-162.jar https://juice-shop.herokuapp.com/#/ --api-key=$BURP_API_KEY --site-id=2 --json --report-file=scan-report.html --report-type=summary
+        run: |
+          echo This is api key $BURP_API_KEY,
+          java -jar burp-driver/burp-ci-driver-2021.3-162.jar --help
       
       # Runs a set of commands using the runners shell
       #- name: Run a multi-line script
